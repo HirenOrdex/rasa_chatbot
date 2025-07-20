@@ -1,0 +1,115 @@
+# domain.yml
+version: "3.1"
+
+intents:
+  - greet
+  - goodbye
+  - route_optimization
+  - fleet_management
+  - inventory_optimization
+  - transportation_safety
+  - public_safety_logistics
+  - cost_optimization
+  - technology_solutions
+
+responses:
+  utter_greet:
+  - text: "Hello! I'm your Logistics Optimization Assistant. How can I help you optimize your operations today?"
+
+  utter_goodbye:
+  - text: "Goodbye! Feel free to reach out whenever you need logistics optimization help."
+
+  utter_route_optimization:
+  - text: |
+      🚚 **Route Optimization Solutions:**
+
+      1. **Vehicle Routing Problem (VRP)** algorithms
+      2. Use GPS and traffic data for real-time optimization
+      3. Consider delivery time windows and vehicle capacity
+      4. Implement Clarke-Wright or Genetic Algorithm solutions
+      5. Tools: Google OR-Tools, OptaPlanner, or commercial software like Route4Me
+
+      Would you like specific implementation guidance?
+
+  utter_fleet_management:
+  - text: |
+      🚛 **Fleet Management Best Practices:**
+
+      1. **Real-time tracking** with GPS/telematics
+      2. **Preventive maintenance** scheduling
+      3. **Driver performance** monitoring
+      4. **Fuel efficiency** optimization
+      5. **Vehicle utilization** analysis
+
+      Key metrics: Cost per mile, vehicle uptime, fuel consumption, driver safety scores.
+
+  utter_inventory_optimization:
+  - text: |
+      📦 **Inventory Optimization Strategies:**
+
+      1. **ABC Analysis** - Categorize items by importance
+      2. **Economic Order Quantity (EOQ)** calculations
+      3. **Safety stock** based on demand variability
+      4. **Just-In-Time (JIT)** for fast-moving items
+      5. **Demand forecasting** using historical data
+
+      Formula: EOQ = √(2DS/H) where D=demand, S=setup cost, H=holding cost
+
+  utter_transportation_safety:
+  - text: |
+      🛡️ **Transportation Safety Guidelines:**
+
+      1. **Driver Training**: Defensive driving, fatigue management
+      2. **Vehicle Inspections**: Daily pre-trip inspections
+      3. **Load Securing**: Proper cargo restraint systems
+      4. **Route Planning**: Avoid high-risk areas/times
+      5. **Emergency Procedures**: Clear protocols for incidents
+
+      Compliance with DOT regulations and regular safety audits are essential.
+
+  utter_public_safety_logistics:
+  - text: |
+      🚨 **Public Safety Logistics:**
+
+      1. **Emergency Response**: Pre-positioned resources and rapid deployment
+      2. **Supply Chain Resilience**: Multiple suppliers and backup routes
+      3. **Communication Systems**: Reliable coordination networks
+      4. **Resource Allocation**: Optimal placement of emergency services
+      5. **Evacuation Planning**: Efficient traffic flow management
+
+      Focus on redundancy, speed, and coordination with public agencies.
+
+  utter_cost_optimization:
+  - text: |
+      💰 **Cost Optimization Strategies:**
+
+      1. **Route Efficiency**: Reduce miles and fuel consumption
+      2. **Load Optimization**: Maximize vehicle capacity utilization
+      3. **Consolidation**: Combine shipments when possible
+      4. **Mode Selection**: Choose optimal transport methods
+      5. **Negotiate Rates**: Regular carrier contract reviews
+
+      Target 10-15% cost reduction through systematic optimization.
+
+  utter_technology_solutions:
+  - text: |
+      🔧 **Technology Solutions for Logistics:**
+
+      1. **TMS (Transportation Management Systems)**
+      2. **WMS (Warehouse Management Systems)**
+      3. **IoT Sensors**: Real-time tracking and monitoring
+      4. **AI/ML**: Predictive analytics and optimization
+      5. **Blockchain**: Supply chain transparency
+
+      Popular platforms: SAP TM, Oracle WMS, Manhattan Associates, Descartes.
+
+  # *** ADD THIS NEW RESPONSE ***
+  utter_please_rephrase:
+  - text: "I'm sorry, I didn't quite understand that. Could you please rephrase what you mean?"
+  - text: "I'm still learning. Can you say that differently?"
+  - text: "My apologies, I'm not sure how to respond to that. Could you try asking in another way?"
+
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

@@ -1,0 +1,41 @@
+
+version: "3.1"
+
+stories:
+- story: greet and route optimization
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: route_optimization
+  - action: utter_route_optimization
+
+- story: fleet management inquiry
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: fleet_management
+  - action: utter_fleet_management
+
+- story: inventory optimization
+  steps:
+  - intent: inventory_optimization
+  - action: utter_inventory_optimization
+
+- story: safety inquiry
+  steps:
+  - intent: transportation_safety
+  - action: utter_transportation_safety
+  - intent: public_safety_logistics
+  - action: utter_public_safety_logistics
+
+- story: cost and technology discussion
+  steps:
+  - intent: cost_optimization
+  - action: utter_cost_optimization
+  - intent: technology_solutions
+  - action: utter_technology_solutions
+
+- story: goodbye
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye

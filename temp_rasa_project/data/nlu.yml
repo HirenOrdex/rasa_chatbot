@@ -1,0 +1,185 @@
+version: "3.1"
+
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - hey there
+    - hi there
+    - good day
+    - greetings
+    - howdy
+    - what's up
+    - yo
+
+- intent: goodbye
+  examples: |
+    - bye
+    - goodbye
+    - see you later
+    - talk to you later
+    - goodbye for now
+    - catch you later
+    - farewell
+    - cya
+    - so long
+    - gotta go
+    - bye for now
+
+- intent: route_optimization
+  examples: |
+    - How can I optimize my delivery route?
+    - What's the best route for multiple deliveries?
+    - Route optimization for trucks
+    - Find shortest delivery path
+    - Optimize transportation route
+    - Best route planning
+    - Minimize travel distance
+    - Efficient delivery routes
+    - Route planning algorithm
+    - I need help with delivery route planning.
+    - Can you help me find the most efficient routes?
+    - What's the quickest way to deliver these packages?
+    - How do I plan my logistics routes effectively?
+    - Give me tips on route optimization.
+    - I want to reduce my travel time for deliveries.
+    - What are strategies for optimizing delivery paths?
+    - Help me with my truck routes.
+    - Route calculation for deliveries.
+    - Best way to plan my delivery stops.
+    - How to make my delivery routes more efficient?
+    - Optimize my courier routes.
+    - Shortest path for my deliveries.
+    - Routing solutions for logistics.
+    - Improve delivery efficiency.
+
+- intent: fleet_management
+  examples: |
+    - How to manage my fleet efficiently?
+    - Fleet tracking solutions
+    - Vehicle maintenance scheduling
+    - Fleet cost optimization
+    - Monitor vehicle performance
+    - Fleet utilization strategies
+    - Driver assignment optimization
+    - Vehicle allocation planning
+    - Best practices for fleet management.
+    - I need help tracking my vehicles.
+    - How do I schedule maintenance for my trucks?
+    - Tips for reducing fleet costs.
+    - How to improve vehicle performance?
+    - Strategies for better fleet utilization.
+    - Assigning drivers effectively.
+    - Planning vehicle allocation.
+    - What are fleet telematics?
+    - How to keep my fleet running smoothly?
+    - Fleet operational efficiency.
+    - Managing a large vehicle fleet.
+
+- intent: inventory_optimization
+  examples: |
+    - How to optimize warehouse inventory?
+    - Inventory management best practices
+    - Stock level optimization
+    - Demand forecasting for inventory
+    - Reduce inventory costs
+    - ABC analysis for inventory
+    - Just-in-time inventory
+    - Safety stock calculation
+    - Strategies for better inventory control.
+    - How to manage stock levels effectively?
+    - What is economic order quantity?
+    - Tips for reducing holding costs.
+    - How to forecast demand accurately?
+    - Implementing JIT in my warehouse.
+    - Calculating safety stock.
+    - Warehouse optimization techniques.
+    - Improve inventory turnover.
+    - Inventory cost reduction.
+
+- intent: transportation_safety
+  examples: |
+    - Transportation safety guidelines
+    - Safe driving practices for logistics
+    - Vehicle safety inspection
+    - Driver safety training
+    - Road safety measures
+    - Cargo safety protocols
+    - Emergency response procedures
+    - Safety compliance requirements
+    - How to ensure safe transportation?
+    - Best practices for driver safety.
+    - What are pre-trip inspection requirements?
+    - How to secure cargo properly?
+    - Road safety tips for truck drivers.
+    - What to do in a transportation emergency?
+    - Compliance with safety regulations.
+    - Safety audits for logistics.
+    - Preventing accidents in transport.
+
+- intent: public_safety_logistics
+  examples: |
+    - Emergency response logistics
+    - Disaster relief supply chain
+    - Public safety transportation
+    - Emergency vehicle routing
+    - Crisis management logistics
+    - Medical supply delivery
+    - Emergency evacuation planning
+    - First responder logistics
+    - How to manage logistics during a disaster?
+    - Supply chain for emergency situations.
+    - Transporting goods for public safety.
+    - Routing emergency vehicles.
+    - Logistics in crisis management.
+    - Delivering medical supplies quickly.
+    - Planning for evacuations.
+    - Supporting first responders with logistics.
+    - Humanitarian logistics.
+    - Disaster preparedness logistics.
+
+- intent: cost_optimization
+  examples: |
+    - How to reduce logistics costs?
+    - Transportation cost analysis
+    - Fuel cost optimization
+    - Logistics budget planning
+    - Cost-effective shipping methods
+    - Reduce operational expenses
+    - Supply chain cost reduction
+    - Optimize delivery costs
+    - Strategies for cutting logistics expenses.
+    - How to analyze transport costs?
+    - Tips for saving on fuel.
+    - Budgeting for logistics operations.
+    - Cheaper shipping options.
+    - Ways to lower supply chain costs.
+    - How to optimize my delivery budget?
+    - Cost efficiency in logistics.
+    - Maximizing profitability in transport.
+
+- intent: technology_solutions
+  examples: |
+    - GPS tracking for logistics
+    - Logistics management software
+    - IoT in transportation
+    - AI for route optimization
+    - Blockchain in supply chain
+    - Automation in warehouses
+    - Digital logistics platforms
+    - Smart transportation systems
+    - What tech can help with logistics?
+    - Modern logistics software.
+    - How is IoT used in transport?
+    - AI for better routing.
+    - Transparency with blockchain in supply chain.
+    - Automated warehouses.
+    - Digital platforms for logistics.
+    - Intelligent transport systems.
+    - Supply chain technology.
+    - Innovations in logistics.

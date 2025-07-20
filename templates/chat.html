@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+{% block title %}Chat{% endblock %}
+{% block content %}
+<div class="max-w-2xl mx-auto mt-10">
+  <h2 class="text-xl font-bold mb-4">Hi {{ username }} 👋</h2>
+  <div id="chat-box" class="bg-white border p-4 h-80 overflow-y-scroll rounded mb-4"></div>
+  <div class="flex">
+    <input id="message" class="flex-grow border p-2 rounded-l" placeholder="Type your message..." />
+    <button onclick="sendMessage()" class="bg-blue-600 text-white px-4 rounded-r">Send</button>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script> {# Added Markdown library #}
+<script>
+  // Configure marked.js to convert single newlines to <br> tags
+  marked.setOptions({
+    breaks: true, // Convert GFM line breaks (single newlines) to <br>
+    gfm: true     // Enable GitHub Flavored Markdown
+  });
+
+  async function sendMessage() {
+    const userInput = document.getElementById('message');
+    const msg = userInput.value;
+    if (!msg.trim()) return; // Use trim() to check for non-empty message
+
+    const chatBox = document.getElementById('chat-box');
+
+    // Display user message
+    const userMessageDiv = document.createElement('div');
+    userMessageDiv.classList.add('text-blue-600', 'font-semibold', 'mt-2');
+    userMessageDiv.textContent = `You: ${msg}`; // Use textContent for user input
+    chatBox.appendChild(userMessageDiv);
+    userInput.value = ''; // Clear input field
+
+    try {
+      const res = await fetch('/webhook', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        credentials: 'include',
+        body: JSON.stringify({ message: msg })
+      });
+      const data = await res.json();
+
+      // Display bot response, parsing Markdown
+      const botResponseHtml = marked.parse(data.response.trim());
+      const botMessageContainer = document.createElement('div');
+      // Use 'prose' for Tailwind Typography plugin, and 'whitespace-pre-wrap' to preserve whitespace
+      botMessageContainer.classList.add('text-green-600', 'mt-1', 'prose', 'whitespace-pre-wrap');
+      botMessageContainer.innerHTML = `<strong>Bot:</strong><br>${botResponseHtml}`;
+      chatBox.appendChild(botMessageContainer);
+      
+      chatBox.scrollTop = chatBox.scrollHeight; // Scroll to bottom
+    } catch (error) {
+      console.error('Error sending message:', error);
+      const errorMessageDiv = document.createElement('div');
+      errorMessageDiv.classList.add('text-red-600', 'mt-1');
+      errorMessageDiv.textContent = 'Bot: Error: Could not get a response from the bot.';
+      chatBox.appendChild(errorMessageDiv);
+      chatBox.scrollTop = chatBox.scrollHeight;
+    }
+  }
+</script>
+{% endblock %}

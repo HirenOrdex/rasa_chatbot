@@ -1,0 +1,55 @@
+version: "3.1"
+rules:
+
+- rule: Say goodbye anytime the user says goodbye
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+
+- rule: Say hi anytime the user says hi
+  steps:
+  - intent: greet
+  - action: utter_greet
+
+# --- Rules for directly responding to specific intents ---
+
+- rule: Respond to route optimization inquiry
+  steps:
+  - intent: route_optimization
+  - action: utter_route_optimization
+
+- rule: Respond to fleet management inquiry
+  steps:
+  - intent: fleet_management
+  - action: utter_fleet_management
+
+- rule: Respond to inventory optimization inquiry
+  steps:
+  - intent: inventory_optimization
+  - action: utter_inventory_optimization
+
+- rule: Respond to transportation safety inquiry
+  steps:
+  - intent: transportation_safety
+  - action: utter_transportation_safety
+
+- rule: Respond to public safety logistics inquiry
+  steps:  # Removed the duplicate 'steps:' line here
+  - intent: public_safety_logistics
+  - action: utter_public_safety_logistics
+
+- rule: Respond to cost optimization inquiry
+  steps:
+  - intent: cost_optimization
+  - action: utter_cost_optimization
+
+- rule: Respond to technology solutions inquiry
+  steps:
+  - intent: technology_solutions
+  - action: utter_technology_solutions
+
+# --- Fallback Rule (Highly Recommended) ---
+- rule: Respond to out-of-scope utterances (low NLU confidence)
+  steps:
+  - intent: nlu_fallback
+  - action: utter_please_rephrase # Define this response in your domain.yml
